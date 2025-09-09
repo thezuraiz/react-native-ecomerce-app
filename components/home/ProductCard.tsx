@@ -23,7 +23,7 @@ const ProductCard = ({
     >
       <Image
         source={{ uri: imageUrl }}
-        className="w-full mb-2 h-52 rounded-2xl aspect-square"
+        className="w-full mb-2 rounded-2xl aspect-square"
         resizeMode="cover"
       />
       <Text className="px-1 text-base font-semibold">{title}</Text>

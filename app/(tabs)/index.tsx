@@ -11,8 +11,8 @@ export default function Home() {
     <SafeAreaView className="px-3 my-2">
       {/* App Bar  */}
       <View className="flex-row items-center justify-between">
-        <Location size="32" color="black" />
-        <Text className="text-xl font-bold text-gray-700">Shanghai China</Text>
+        <Location size="28" color="black" />
+        <Text className="text-xl font-bold text-gray-700">Lahore Pakistan</Text>
         <TouchableOpacity className="relative">
           <ShoppingCart size="28" color="black" />
           <View className="absolute px-1 bg-red-600 rounded-full -top-1 -right-1">
