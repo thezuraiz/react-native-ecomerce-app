@@ -1,3 +1,4 @@
+import { useRoute } from "@react-navigation/native";
 import { useNavigation } from "expo-router";
 import {
   AddCircle,
@@ -16,6 +17,8 @@ const ProductScreen = () => {
   const [isLiked, setIsLiked] = useState(false);
   const [counter, setCounter] = useState(0);
   const navigation = useNavigation();
+  const route = useRoute();
+  const { product } = route.params;
   return (
     <View className="flex-1">
       <View className="absolute z-10 flex-row items-center justify-between w-full p-4 top-10">
@@ -35,15 +38,17 @@ const ProductScreen = () => {
       </View>
       <Image
         source={{
-          uri: "https://woodc.pk/wp-content/uploads/2023/12/eqre-700x700.webp",
+          uri: product.imageUrl,
         }}
         className=" aspect-square"
       />
       <ScrollView className="flex-1 rounded-xl mt-[-10] bg-white p-6">
         <View className="flex-row items-center justify-between ">
-          <Text className="text-2xl font-bold">Products</Text>
+          <Text className="w-3/5 text-2xl font-bold" numberOfLines={1}>
+            {product.title}
+          </Text>
           <View className="px-2 bg-blue-100 rounded-full">
-            <Text className="text-lg font-bold">$500.80</Text>
+            <Text className="text-lg font-bold">${product.price}</Text>
           </View>
         </View>
         {/* Ratings & Counter */}
@@ -74,6 +79,7 @@ const ProductScreen = () => {
         {/* Discription  */}
         <Text className="mt-2 text-2xl font-medium">Desciption</Text>
         <Text className="text-base font-normal text-justify text-gray-500">
+          {product.description}
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quas, ab
           perferendis recusandae molestias totam necessitatibus veniam harum
           numquam quaerat? Molestias ut natus distinctio quisquam eius minus

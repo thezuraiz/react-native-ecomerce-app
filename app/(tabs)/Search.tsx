@@ -14,8 +14,6 @@ const Search = () => {
         </TouchableOpacity>
         <TextInput
           className="flex-1 h-full "
-          value=""
-          editable={false}
           onPressIn={() => navigation.navigate("Search" as never)}
           placeholder="What are you looking for"
         />

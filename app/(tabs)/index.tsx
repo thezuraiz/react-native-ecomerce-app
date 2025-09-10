@@ -2,11 +2,13 @@ import CarouselSlider from "@/components/home/carousel";
 import ProductRow from "@/components/home/ProductRow";
 import Welcome from "@/components/home/welcome";
 import CustomHeading from "@/components/ui/CustomHeading";
+import { useNavigation } from "expo-router";
 import { Location, ShoppingCart } from "iconsax-react-native";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Home() {
+  const navigation = useNavigation();
   return (
     <SafeAreaView className="px-3 my-2">
       {/* App Bar  */}
@@ -23,7 +25,10 @@ export default function Home() {
       <ScrollView>
         <Welcome />
         <CarouselSlider />
-        <CustomHeading Heading="New Arrival" />
+        <CustomHeading
+          Heading="New Arrival"
+          onPress={() => navigation.navigate("products-page" as never)}
+        />
         <ProductRow />
       </ScrollView>
     </SafeAreaView>
