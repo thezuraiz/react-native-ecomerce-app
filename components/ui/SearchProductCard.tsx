@@ -1,6 +1,6 @@
 import { Image, Text, View } from "react-native";
 
-const SearchProductCard = ({ item }) => {
+const SearchProductCard = ({ item }: any) => {
   return (
     <View className="flex flex-row gap-4 p-4 my-1 bg-white rounded-2xl">
       <View>

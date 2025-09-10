@@ -13,7 +13,7 @@ const useFetch = <T>({ url }: { url: string }): UseFetchResult<T> => {
       console.log("Raw response:", response.data);
       setData(response.data);
     } catch (err) {
-      // setError(err)
+      setError(err);
     } finally {
       setLoading(false);
     }
