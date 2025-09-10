@@ -10,10 +10,10 @@ const useFetch = <T>({ url }: { url: string }): UseFetchResult<T> => {
     try {
       setLoading(true);
       const response = await axios.get(url);
-      // console.log("Fetched data:", response.data[0]);
+      console.log("Raw response:", response.data);
       setData(response.data);
     } catch (err) {
-      setError(err);
+      // setError(err)
     } finally {
       setLoading(false);
     }
