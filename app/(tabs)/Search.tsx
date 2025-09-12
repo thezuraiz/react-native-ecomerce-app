@@ -22,7 +22,7 @@ const Search = () => {
     error,
     isLoading,
     refresh,
-  } = useFetch({
+  } = useFetch<Product>({
     url: `http://localhost:3132/api/products/search/${searchKey}`,
   });
 
@@ -64,10 +64,6 @@ const Search = () => {
             {/* Results */}
             {isLoading ? (
               <Text className="mt-10 text-center">Loading...</Text>
-            ) : error ? (
-              <Text className="mt-10 text-center">
-                Something went wrong {data.title}
-              </Text>
             ) : data?.length == 0 ? (
               <View className="flex-1 mt-36">
                 <Image

@@ -17,9 +17,9 @@ export default function RootLayout() {
   const router = useRouter();
 
   if (!loaded) {
-    // Async font loading only occurs in development.
     return null;
   }
+
   function ToastWithSafeArea() {
     const insets = useSafeAreaInsets();
     return <Toast swipeable={true} topOffset={insets.top} />;
@@ -27,9 +27,12 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={DefaultTheme}>
-      <Stack>
+      <Stack initialRouteName="login">
+        <Stack.Screen name="index" options={{ headerShown: false }} />
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
+        <Stack.Screen name="login" options={{ headerShown: false }} />
+        <Stack.Screen name="register" options={{ headerShown: false }} />
         <Stack.Screen name="product-details" options={{ headerShown: false }} />
         <Stack.Screen
           name="cart-page"
